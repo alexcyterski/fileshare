@@ -1,0 +1,57 @@
+{% extends "fileshare/layout.html" %}
+
+{% block content %}
+    <div class="file-widget">
+        <div class="file-widget-header">
+            {{ dir }}
+            <ul class="dir-links">
+                <a href="{% url 'index' 'files' %}" id="files-link">files</a>
+                <a href="{% url 'index' 'media' %}" id="media-link">media</a>
+                <a href="{% url 'index' 'temp' %}" id="temp-link">temp</a>
+                <a href="{% url 'index' 'other' %}" id="other-link">other</a>
+            </ul>
+        </div>
+        <div class="files-view">
+            {% for file in files %}
+            <div class="file-row">
+                {% if file.0 in thumbnails %}
+                <img class="preview" src="..\storage\thumbnails\{{ file.0 }}">
+                {% endif %}
+                <div class="file">
+                    <div class="link-container">
+                        <a class="file-name" href="{% url 'download' dir file.0 %}" style="text-decoration: none;">{{ file.0 }}</a>
+                        {% for record in model_data %}
+                        {% if record.name == file.0 %}
+                        <div class="upload-info">uploaded by {{ record.uploaded_by }} on {{ record.upload_date }}</div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {{ file.1 }}
+                </div>
+                <div class="delete">
+                    <a href="{% url 'delete' dir file.0 %}" id="delete-link" style="text-decoration: none; color: black;">Delete</a>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="upload-row">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" id="file-input" name="file-input" hidden>
+                    <input type="text" name="dir" value="{{ dir }}" hidden>            
+                    <div class="file" style="border: none;">
+                        <button type="button" id="upload-link" style="border: none; background-color: rgb(240, 240, 240); color: #54083D;">+ Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="info-widget">
+        <div class="info-widget-header">storage</div>
+        <div class="storage-data">
+            {{ storage }} / 120 GB
+        </div>
+    </div>
+    {% if dir == 'temp' %}
+    <div class="message">Files in this directory will be deleted after 7 days.</div>
+    {% endif %}
+{% endblock %}

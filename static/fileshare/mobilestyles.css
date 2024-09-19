@@ -1,0 +1,175 @@
+body {
+    background-color: #110527;
+}
+
+.custom-navbar {
+    min-height: 64px;
+    margin-bottom: 28px;
+    font-size: 1.8rem;
+    background-color: #20062C;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid gray 3px;
+    border-top: solid gray 3px;
+}
+
+.brand {
+    margin-left: 2%; 
+    font-size: 4.0rem;
+    font-weight: bold;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.navbar-links {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    align-items: center;
+    margin-bottom: 0px;
+    list-style: none;
+}
+
+.nav-item {
+    margin-right: 24px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar {
+    font-size: 2.0rem;
+}
+
+.file-widget {
+    width: 100%;
+    min-width: min-content;
+}
+
+.info-widget {
+    display: flex;
+    width: 70%;
+    min-width: min-content;
+    max-width: 512px;
+    padding: 10px;
+    margin-top: 18px;
+    background-color: #20062C;
+    border-radius: 5px;
+    border: solid gray 3px;
+    justify-content: space-between;
+}
+
+.upload-info {
+    font-size: 1.25rem;
+    color: darkslategrey;
+}
+
+.file-widget-header, .info-widget-header {
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+    color: whitesmoke;
+    font-size: 2.75rem;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.file-widget-header {
+    transition: color .15s ease-in-out;
+}
+
+.dir-links > * {
+    color: whitesmoke;
+    font-size: xx-large;
+    font-weight: normal;
+    vertical-align: top;
+}
+
+.files-view {
+    border: solid gray 2px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.file-row, .upload-row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+}
+
+.file {
+    padding: 10px;
+    font-size: xx-large;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    border-right: solid gray 2px;
+}
+
+.preview {
+    height: 84px;
+    width: 84px;
+    object-fit: contain;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-right: solid gray 1px;
+}
+
+.file-name {
+    color: #54083D;
+}
+
+.delete {
+    padding: 10px;
+    font-size: xx-large;
+    width: min-content;
+    height: 100%;
+}
+
+.user-form > * > * {
+    margin-bottom: 6px;
+}
+
+.storage-data {
+    color: whitesmoke;
+    align-self: center;
+    font-size: xx-large;
+    text-wrap: nowrap;
+}
+
+.message {
+    display: flex;
+    background-color: whitesmoke;
+    justify-content: center;
+    width: 30%;
+    margin-top: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.file-row:not(:last-child) {
+    border-bottom: solid gray 2px;
+}
+
+.form-control {
+    font-size: 4.0rem;
+}
+
+.btn {
+    font-size: 3.0rem;
+    margin-top: 2%;
+}
